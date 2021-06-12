@@ -24,11 +24,11 @@ FROM retirement_titles
 ORDER BY emp_no, from_date DESC;
 
 -- Creating table to hold the count for those eligible for retirement by title
-SELECT COUNT(title) AS count, title
+SELECT COUNT(title) AS "Count of retirement by title", title
 INTO retiring_titles
 FROM unique_titles
 GROUP BY title
-ORDER BY count DESC;
+ORDER BY "Count of retirement by title" DESC;
 
 -- Creating table to identify those employees eligible for mentorship program
 SELECT DISTINCT ON (e.emp_no) e.emp_no,
